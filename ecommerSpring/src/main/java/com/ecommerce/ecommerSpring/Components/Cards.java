@@ -1,4 +1,4 @@
-package Components;
+package com.ecommerce.ecommerSpring.Components;
 import java.util.List ;
 
 import jakarta.persistence.*;
@@ -11,19 +11,26 @@ public class Cards {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter
+
     private Long id;
 
     @OneToOne
-    @Getter
+    @JoinColumn(name = "cliente_id")
+
     private Cliente client;
 
     @OneToMany
     @JoinColumn(name = "card_id")  // FK na tabela Products que referencia Cards
-    @Getter
+
     private List<Products> products;
 
-    @Getter
+    public Cards() {}
+    public Cards( Cliente client, List<Products> products, int quantidade) {
+        this.client = client;
+        this.products = products;
+        this.quantidade = quantidade;
+    }
+
     private int quantidade;
 
     // setters...
@@ -35,11 +42,28 @@ public class Cards {
         this.products = products;
     }
 
+
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public Cliente getClient() {
+        return client;
+    }
+
+    public List<Products> getProducts() {
+        return products;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
     }
 }

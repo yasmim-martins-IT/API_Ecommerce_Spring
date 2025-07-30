@@ -1,10 +1,13 @@
-package controllers;
+package com.ecommerce.ecommerSpring.controllers;
 
-import Components.Products;
+import com.ecommerce.ecommerSpring.Components.ProductDTO;
+import com.ecommerce.ecommerSpring.Components.Products;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import repositors.ProductsRepository;
+import com.ecommerce.ecommerSpring.repositors.ProductsRepository;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @RestController // DECLARA COMO UM CONTROLLER (RECEBE REQUISIÇÕES)
@@ -23,8 +26,11 @@ public class ProductController {
     }
 
     @PostMapping
-    public Products createProduct(@RequestBody Products product) {
-        return repository.save(product);  // ERRO: método não estático chamado via classe
+    public Products createProduct(@RequestBody ProductDTO dto) {
+        Products product = new Products(dto.getNome(), dto.getPreco(), dto.getQuantidadeDisponivel());
+        return repository.save(product);
     }
+
+
 
 }

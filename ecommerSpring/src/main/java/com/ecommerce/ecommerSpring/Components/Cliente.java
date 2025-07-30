@@ -1,4 +1,4 @@
-package Components;
+package com.ecommerce.ecommerSpring.Components;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -8,16 +8,19 @@ import lombok.Getter;
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter
    private Long id ;
 
-    @Getter
+
     private String name ;
 
-    @Getter
+
     private  String email;
 
-    public Cliente(){}
+    public  Cliente () {}
+    public Cliente(String name ,String email ) {
+        this.name = name;
+        this.email = email ;
+    }
 
     public void setName(String name) {
         this.name = name;
@@ -31,4 +34,15 @@ public class Cliente {
         this.id = id;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
 }
