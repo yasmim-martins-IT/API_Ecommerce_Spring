@@ -8,7 +8,9 @@ Para rodar a aplicação :
 3- utilize as urls :
 
 para produtos - localhost:9090/produtos
+
 para clientes - localhost:9090/clientes
+
 para carrinho -  localhost:9090/carrinhos
 
 Tenha um bom proveito :)
