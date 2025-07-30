@@ -7,10 +7,12 @@ import com.ecommerce.ecommerSpring.Components.Products;
 import com.ecommerce.ecommerSpring.repositors.ClienteRepository;
 import com.ecommerce.ecommerSpring.repositors.ProductsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.ecommerce.ecommerSpring.repositors.CardRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/carrinho")
@@ -43,5 +45,18 @@ public class CardsController {
         card.setQuantidade(dto.getQuantidade());
 
         return cardRepository.save(card);
+    }
+
+    @DeleteMapping
+    public ResponseEntity<Void> deletarCard (@RequestBody Long card_id) {
+        Optional<Cards> cards = cardRepository.findById(card_id);
+
+        if (cards.isPresent()) {
+            cardRepository.deleteById(card_id);
+            return ResponseEntity.noContent().build();
+        }
+        else {
+            return ResponseEntity.notFound().build() ;
+        }
     }
 }
