@@ -1,7 +1,6 @@
-package com.ecommerce.ecommerSpring.Components;
+package com.ecommerce.ecommerSpring.Entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
 
 @Entity
 @Table(name = "tb_clientes")

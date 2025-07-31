@@ -1,6 +1,6 @@
 package com.ecommerce.ecommerSpring.repositors;
 
-import com.ecommerce.ecommerSpring.Components.Cards;
+import com.ecommerce.ecommerSpring.Entity.Cards;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

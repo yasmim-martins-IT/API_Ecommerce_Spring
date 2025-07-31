@@ -1,4 +1,4 @@
-package com.ecommerce.ecommerSpring.Components;
+package com.ecommerce.ecommerSpring.Entity;
 
 public class ClienteDTO {
     public String name ;

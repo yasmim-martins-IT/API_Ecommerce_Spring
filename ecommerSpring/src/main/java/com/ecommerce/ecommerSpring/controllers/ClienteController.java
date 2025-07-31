@@ -1,10 +1,8 @@
 package com.ecommerce.ecommerSpring.controllers;
 
 
-import com.ecommerce.ecommerSpring.Components.Cliente;
-import com.ecommerce.ecommerSpring.Components.ClienteDTO;
-import com.ecommerce.ecommerSpring.Components.ProductDTO;
-import com.ecommerce.ecommerSpring.Components.Products;
+import com.ecommerce.ecommerSpring.Entity.Cliente;
+import com.ecommerce.ecommerSpring.Entity.ClienteDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

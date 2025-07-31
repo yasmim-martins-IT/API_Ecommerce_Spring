@@ -1,4 +1,4 @@
-package com.ecommerce.ecommerSpring.Components;
+package com.ecommerce.ecommerSpring.Entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
@@ -28,15 +28,32 @@ public class Products {
     @Column(name = "quantidade_disponivel", nullable = false)
     private int quantidadeDisponivel;
 
+    @NotNull(message = "A imagem é obrigatória")
+    @Column(nullable = false , length = 500)
+    private String image ;
+
     // Construtor padrão (sem argumentos)
     public Products() {
     }
 
     // Construtor com todos os campos (exceto id, que é gerado)
-    public Products(String nome, BigDecimal preco, int quantidadeDisponivel) {
+    public Products(String nome, BigDecimal preco, int quantidadeDisponivel , String image) {
         this.nome = nome;
         this.preco = preco;
         this.quantidadeDisponivel = quantidadeDisponivel;
+        this.image = image ;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     // Getters e setters (adicione manualmente ou gere pelo IDE)

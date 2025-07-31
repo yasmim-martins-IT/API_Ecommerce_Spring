@@ -1,14 +1,12 @@
 package com.ecommerce.ecommerSpring.controllers;
 
-import com.ecommerce.ecommerSpring.Components.ProductDTO;
-import com.ecommerce.ecommerSpring.Components.Products;
-import jakarta.validation.Valid;
+import com.ecommerce.ecommerSpring.Entity.ProductDTO;
+import com.ecommerce.ecommerSpring.Entity.Products;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.ecommerce.ecommerSpring.repositors.ProductsRepository;
 
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,7 +27,7 @@ public class ProductController {
 
     @PostMapping
     public Products createProduct(@RequestBody ProductDTO dto) {
-        Products product = new Products(dto.getNome(), dto.getPreco(), dto.getQuantidadeDisponivel());
+        Products product = new Products(dto.getNome(), dto.getPreco(), dto.getQuantidadeDisponivel() , dto.getImage());
         return repository.save(product);
     }
 

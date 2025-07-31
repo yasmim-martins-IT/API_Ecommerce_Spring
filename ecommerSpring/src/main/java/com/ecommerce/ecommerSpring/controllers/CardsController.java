@@ -1,9 +1,9 @@
 package com.ecommerce.ecommerSpring.controllers;
 
-import com.ecommerce.ecommerSpring.Components.Cards;
-import com.ecommerce.ecommerSpring.Components.CardsDTO;
-import com.ecommerce.ecommerSpring.Components.Cliente;
-import com.ecommerce.ecommerSpring.Components.Products;
+import com.ecommerce.ecommerSpring.Entity.Cards;
+import com.ecommerce.ecommerSpring.Entity.CardsDTO;
+import com.ecommerce.ecommerSpring.Entity.Cliente;
+import com.ecommerce.ecommerSpring.Entity.Products;
 import com.ecommerce.ecommerSpring.repositors.ClienteRepository;
 import com.ecommerce.ecommerSpring.repositors.ProductsRepository;
 import org.springframework.beans.factory.annotation.Autowired;

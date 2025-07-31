@@ -1,8 +1,7 @@
-package com.ecommerce.ecommerSpring.Components;
+package com.ecommerce.ecommerSpring.Entity;
 import java.util.List ;
 
 import jakarta.persistence.*;
-import lombok.Getter;
 
 
 @Entity

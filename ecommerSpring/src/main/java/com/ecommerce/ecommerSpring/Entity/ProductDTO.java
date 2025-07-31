@@ -1,4 +1,4 @@
-package com.ecommerce.ecommerSpring.Components;
+package com.ecommerce.ecommerSpring.Entity;
 
 import java.math.BigDecimal;
 
@@ -8,7 +8,19 @@ public class ProductDTO {
         public BigDecimal preco;
         public int quantidadeDisponivel;
 
+        public String image ;
+
         // Getters e setters (recomendado para desserialização)
+
+
+        public String getImage() {
+                return image;
+        }
+
+        public void setImage(String image) {
+                this.image = image;
+        }
+
         public String getNome() { return nome; }
         public void setNome(String nome) { this.nome = nome; }
 
